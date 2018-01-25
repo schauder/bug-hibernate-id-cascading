@@ -1,12 +1,17 @@
-# Hibernate Test Case Templates
+# The tuple returned from a native query was all lowercase, now is all upper case.
 
-When creating a bug report for any project within the Hibernate family, it's extremely helpful (and, frankly, required)
-to have an adequate test case available.  This is obviously important to make reproducing the issue as easy as
-possible.  But it's also vital longer-term.  Nearly every bug fix should include a regression test, which frequently is based
-on the original reproducer (sometimes, it's the reproducer, verbatim).
+Not a bug, but changed behavior due to https://hibernate.atlassian.net/browse/HHH-12119
 
-To help create useful test cases, we're opening up this repo with various templates.  Please see the READMEs in each
-project's subdir for more info.
+## Run with 
 
-As always, this is open source for a reason!  If these templates can be improved in any way, please let us know (either
-through our JIRA instance or through GitHub Issues).  Better yet, send us a pull request!
+    cd orm/hibernate-orm-5/   
+
+Followed by one of: 
+
+    mvn clean install -D version.org.hibernate=5.2.12.Final
+
+    mvn clean install -D version.org.hibernate=5.2.13-SNAPSHOT
+
+    mvn clean install -D version.org.hibernate=5.3.0-SNAPSHOT
+    
+Note that the first one succeeds, while the other two fail.
