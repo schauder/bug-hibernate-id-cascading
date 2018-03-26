@@ -24,23 +24,12 @@ import javax.persistence.ManyToOne;
  * @author Jens Schauder
  */
 @Entity
-@IdClass(SomeEntityPK.class)
 public class SomeEntity {
 
 	@Id
 	private long id;
 
-	@Id
-	@ManyToOne
-	private ReferencedEntity referencedEntity;
-
-	public ReferencedEntity getReferencedEntity() {
-		return referencedEntity;
-	}
-
-	public void setReferencedEntity(ReferencedEntity referencedEntity) {
-		this.referencedEntity = referencedEntity;
-	}
+	private String one;
 
 	public long getId() {
 		return id;
@@ -48,5 +37,13 @@ public class SomeEntity {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getOne() {
+		return one;
+	}
+
+	public void setOne(String one) {
+		this.one = one;
 	}
 }
